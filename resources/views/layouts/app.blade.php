@@ -29,9 +29,10 @@
       <div class="main-content">
         @yield('main')
       </div>
-      
+
       @include('components.footer')
 
+      @include('partials.modal')
 
     </div>
   </div>

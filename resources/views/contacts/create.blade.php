@@ -38,7 +38,7 @@
                     </div>
                     <div class="form-group">
                       <label for="telephone">{{ __('Telephone') }}</label>
-                      <input type="tel" id="telephone" name="telephone" class="form-control @error('telephone') is-invalid @enderror" placeholder="Téléphone" value="{{ old('telephone') }}">
+                      <input type="text" id="telephone" name="telephone" class="form-control @error('telephone') is-invalid @enderror" placeholder="Téléphone" value="{{ old('telephone') }}">
                     @error('adresse')
                       <div class="alert alert-danger">{{ $message }}</div>
                     @enderror

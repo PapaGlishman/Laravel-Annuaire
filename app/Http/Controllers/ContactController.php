@@ -10,9 +10,10 @@ use Illuminate\Http\RedirectResponse;
 class ContactController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
-        return view('contacts.index');
+        $contacts = Contact::paginate(15);
+        return view('contacts.index', compact('contacts'));
 
     }
 
@@ -43,6 +44,22 @@ class ContactController extends Controller
         $contact->save();
 
         return redirect('/');
+    }
+
+
+    public function destroy($id)
+    {
+        //
+
+        $contact = Contact::findOrFail($id);
+        if(Contact::destroy($id)){
+            //flash(__('Tag has been deleted successfully'))->success();
+            return redirect()->route('home');
+        }
+        else{
+            //flash(__('Something went wrong'))->error();
+            return back();
+        }
     }
 
 

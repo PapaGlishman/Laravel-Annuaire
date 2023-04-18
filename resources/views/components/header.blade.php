@@ -1,12 +1,12 @@
 <nav class="navbar navbar-expand-lg main-navbar">
     <a href="index.html" class="navbar-brand sidebar-gone-hide">{{ env('APP_NAME') }}</a>
     <div class="navbar-nav">
-      <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
+      <a href="{{ route('home') }}" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
     </div>
 
     <form class="form-inline ml-auto">
       <ul class="navbar-nav">
-        <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
+        <li><a href="" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
       </ul>
       <div class="search-element">
         <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250">
@@ -18,11 +18,11 @@
   <nav class="navbar navbar-secondary navbar-expand-lg">
     <div class="container">
       <ul class="navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item {{ areActiveRoutesHome(['home'])}}">
           <a href="{{ route('home')}} " class="nav-link"><i class="fas fa-home"></i><span>Accueil</span></a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item {{ areActiveRoutesHome(['contacts.create'])}}">
             <a href="{{ route('contacts.create') }}" class="nav-link"><i class="fas fa-plus"></i><span>Ajouter un contact</span></a>
         </li>
 
