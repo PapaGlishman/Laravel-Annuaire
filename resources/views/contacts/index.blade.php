@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Contact List')
+
 @section('main')
 
 <section class="section">
@@ -34,7 +36,6 @@
                                     <th>#</th>
                                     <th>{{ __('Nom') }}</th>
                                     <th>{{ __('Prenom') }}</th>
-                                    <th>{{ __('Email') }}</th>
                                     <th width="10%">{{ __('Options') }}</th>
                                 </tr>
                                 @foreach($contacts as $key => $contact)
@@ -42,15 +43,14 @@
                                     <td>{{ ($key+1) + ($contacts->currentPage() - 1)*$contacts->perPage() }}</td>
                                     <td>{{  $contact->nom }}</td>
                                     <td>{{ $contact->prenom }}</td>
-                                    <td>{{ $contact->email }}</td>
                                     <td>
                                         <div class="btn-group">
                                             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                                             {{ __(' Options') }}
                                             </button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" onclick="">{{ __('show') }}</a>
-                                                <a class="dropdown-item" onclick="">{{ __('edit') }}</a>
+                                                <a class="dropdown-item" href="{{route('contacts.show', encrypt($contact->id))}}">{{ __('show') }}</a>
+                                                <a class="dropdown-item" href="{{route('contacts.edit', encrypt( $contact->id))}}">{{ __('Edit') }}</a>
                                                 <a class="dropdown-item" onclick="confirm_modal('{{route('contacts.destroy',  $contact->id)}}');">{{ __('Delete') }}</a>
                                             </div>
 

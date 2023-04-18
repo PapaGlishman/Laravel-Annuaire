@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
+@section('title', 'Add Contact')
+
 @section('main')
 
 <section class="section">
     <div class="section-body">
-        {{-- @if ($errors->any())
+        @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
@@ -12,7 +14,7 @@
                     @endforeach
                 </ul>
             </div>
-        @endif --}}
+        @endif
       <div class="row">
         <div class="col-lg-6 col-lg-offset-3 mx-auto">
           <div class="card">

@@ -46,6 +46,32 @@ class ContactController extends Controller
         return redirect('/');
     }
 
+    public function edit($id)
+    {
+        $contact = Contact::findOrFail(decrypt($id));
+        return view('contacts.edit',compact('contact'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $contact = Contact::findOrFail($id);
+        $contact->nom = $request->nom;
+        $contact->prenom= $request->prenom;
+        $contact->telephone = $request->telephone;
+        $contact->email = $request->email;
+        $contact->adresse = $request->adresse;
+        $contact->save();
+        //flash(__('Contact has been updated successfully'))->success();
+        return redirect()->route('home');
+    }
+
+
+    public function show($id)
+    {
+        $contact  = Contact::findOrFail(decrypt($id));
+        return view('contacts.show', compact('contact'));
+    }
+
 
     public function destroy($id)
     {
