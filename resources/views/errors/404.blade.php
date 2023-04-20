@@ -11,11 +11,11 @@
         <div class="page-inner">
             <h1>404</h1>
             <div class="page-description">
-                {{__('Sorry, but the page you are looking for has not been found on our server.')}}
+                {{__('Désolé, mais la page que vous etes entrain de rechercher n\'a pas été trouvé sur notre serveur.')}}
             </div>
             <div class="page-search">
                 <div class="mt-3">
-                    <a href="{{ route('home') }}">{{ __('Back to Home') }}</a>
+                    <a href="{{ route('home') }}">{{ __('Retour') }}</a>
                 </div>
             </div>
         </div>
