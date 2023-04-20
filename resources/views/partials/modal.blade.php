@@ -30,13 +30,13 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>{{__('Delete confirmation message')}}</p>
+                        <p>{{__('Supprimer message de confirmation')}}</p>
                     </div>
                     <div class="modal-footer bg-whitesmoke br">
                         <button type="button"
                             class="btn btn-secondary"
                             data-dismiss="modal">{{ __('Cancel') }}</button>
-                        <a id="delete_link" class="btn btn-danger btn-ok">{{__('Delete')}}</a>
+                        <a id="delete_link" class="btn btn-danger btn-ok">{{__('Supprimer')}}</a>
                     </div>
                 </div>
             </div>

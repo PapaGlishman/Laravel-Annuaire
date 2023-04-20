@@ -9,7 +9,7 @@
         <li><a href="" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
       </ul>
       <div class="search-element">
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250">
+        <input class="form-control" type="search" placeholder="Recherche" aria-label="Search" data-width="250">
         <button class="btn" type="submit"><i class="fas fa-search"></i></button>
       </div>
     </form>
@@ -19,11 +19,11 @@
     <div class="container">
       <ul class="navbar-nav">
         <li class="nav-item {{ areActiveRoutesHome(['home'])}}">
-          <a href="{{ route('home')}} " class="nav-link"><i class="fas fa-home"></i><span>Accueil</span></a>
+          <a href="{{ route('home')}} " class="nav-link"><i class="fas fa-home"></i><span>{{ __('Accueil') }}</span></a>
         </li>
 
         <li class="nav-item {{ areActiveRoutesHome(['contacts.create'])}}">
-            <a href="{{ route('contacts.create') }}" class="nav-link"><i class="fas fa-plus"></i><span>Ajouter un contact</span></a>
+            <a href="{{ route('contacts.create') }}" class="nav-link"><i class="fas fa-plus"></i><span>{{ __('Ajouter un contact') }}</span></a>
         </li>
 
       </ul>

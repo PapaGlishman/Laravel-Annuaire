@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
-@section('title', 'Contact List')
+@section('title', 'Liste des contacts')
 
 @section('main')
 
 <section class="section">
     <div class="section-header">
-        <h1>{{ __('Contact Information') }}</h1>
+        <h1>{{ __('Les informations du contact') }}</h1>
     </div>
     <div class="section-body">
-        <h2 class="section-title">{{ __('Contacts List') }}</h2>
+        <h2 class="section-title">{{ __('Liste des contacts') }}</h2>
 
         <div class="row mt-4">
             <div class="col-12">
@@ -20,7 +20,7 @@
                                 <div class="input-group">
                                     <input type="text"
                                         class="form-control"
-                                        id="search" name="search" @isset($sort_search) value="{{ $sort_search }}" @endisset placeholder="{{ __('Type & Enter') }}">
+                                        id="search" name="search" @isset($sort_search) value="{{ $sort_search }}" @endisset placeholder="{{ __('Taper & Entrer') }}">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                                     </div>
@@ -35,7 +35,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>{{ __('Nom') }}</th>
-                                    <th>{{ __('Prenom') }}</th>
+                                    <th>{{ __('Prénom') }}</th>
                                     <th width="10%">{{ __('Options') }}</th>
                                 </tr>
                                 @foreach($contacts as $key => $contact)
@@ -49,9 +49,9 @@
                                             {{ __(' Options') }}
                                             </button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="{{route('contacts.show', encrypt($contact->id))}}">{{ __('show') }}</a>
-                                                <a class="dropdown-item" href="{{route('contacts.edit', encrypt( $contact->id))}}">{{ __('Edit') }}</a>
-                                                <a class="dropdown-item" onclick="confirm_modal('{{route('contacts.destroy',  $contact->id)}}');">{{ __('Delete') }}</a>
+                                                <a class="dropdown-item" href="{{route('contacts.show', encrypt($contact->id))}}">{{ __('Afficher') }}</a>
+                                                <a class="dropdown-item" href="{{route('contacts.edit', encrypt( $contact->id))}}">{{ __('Editer') }}</a>
+                                                <a class="dropdown-item" onclick="confirm_modal('{{route('contacts.destroy',  $contact->id)}}');">{{ __('Suprimer') }}</a>
                                             </div>
 
                                         </div>
